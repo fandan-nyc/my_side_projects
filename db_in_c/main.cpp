@@ -2,6 +2,7 @@
 #include "InputBuffer.h"
 
 const int EXIST_SUCCESS = 0 ;
+
 void print_prompt() {
   std::cout << "sql> ";
 }
@@ -9,7 +10,7 @@ void print_prompt() {
 int main(int argc, char* argv[]){
   InputBuffer inputBuffer;
   while(true){
-       print_prompt();
+    print_prompt();
     inputBuffer.readUserInput();
     if(inputBuffer.getBuffer() == ".exit"){
       exit(EXIST_SUCCESS);
