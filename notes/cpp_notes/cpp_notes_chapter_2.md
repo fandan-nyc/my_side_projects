@@ -90,3 +90,5 @@ Author: Bjarne Stroustrup
    
   One example is that in the Vector example above, we should ensure the size of the array is >= 0, otherwise throw length_error (which is a std lib in cpp)
   
+  to ensure the invariant, we can leverage static_assert etc. [TODO] fill in more details for static assert, and runtime checked assertions. 
+
