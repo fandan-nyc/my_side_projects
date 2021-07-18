@@ -61,9 +61,6 @@ Author: Bjarne Stroustrup
   ```
 
 * struct
-  ```
-   struct Vector {
-     int sz ; 
-     double * values;
-   }
-  ```
+  
+  use dot for struct or reference to struct. use -> for struct pointer, to get the var in the struct.
+  example [here](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/vector_basic_1.cpp)
