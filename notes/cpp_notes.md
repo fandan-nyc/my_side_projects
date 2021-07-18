@@ -64,3 +64,9 @@ Author: Bjarne Stroustrup
   
   use dot for struct or reference to struct. use -> for struct pointer, to get the var in the struct.
   example [here](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/vector_basic_1.cpp)
+
+* class
+  Note that, in class, you can have a method called `int getSize() const`. this is different from the `const int getSize();`
+  
+  The first one means in the method you cannot modify the private fields. The second one means that your return val is const.
+  [TODO] we will talk about the const method `const int method()` and why do we need it later.
