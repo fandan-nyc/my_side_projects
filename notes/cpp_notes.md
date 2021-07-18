@@ -60,4 +60,10 @@ Author: Bjarne Stroustrup
   // if you pass int a
   ```
 
-
+* struct
+  ```
+   struct Vector {
+     int sz ; 
+     double * values;
+   }
+  ```
