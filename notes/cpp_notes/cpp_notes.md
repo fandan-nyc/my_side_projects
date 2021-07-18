@@ -83,3 +83,10 @@ Author: Bjarne Stroustrup
 * namespace
 
   Check out example: [here](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_2/namespace_example.cpp)
+
+* invariant
+
+  What is invariant ? a statement that is assumed to be true for a class is called class invariant or just invariance. it is the job of a constructor to establish the invariant for its class (so that the member funcs can reply onto it)
+   
+  One example is that in the Vector example above, we should ensure the size of the array is >= 0, otherwise throw length_error (which is a std lib in cpp)
+  
