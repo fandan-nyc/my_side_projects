@@ -5,10 +5,16 @@ class Vector {
 public:
     Vector(int s) :ele {new double[s]}, size {s} {
     };
+    
+    double& operator[](int pos) {
+        return ele[pos];
+    }
+    
     int getSize() const {
-       // this.size = 1;
+       // this -> size = 1; will not work
         return this -> size;
     }
+    
     const int getSize2() {
         this -> size = 2;
         return this -> size;
@@ -22,6 +28,8 @@ private:
 int main(){
     Vector v {9};
     cout << v.getSize() << "\n";
-    cout << v.getSize2();
-    
+    auto tt = v.getSize2();
+    const int ttt = v.getSize2();
+    tt = 90;
+    cout << ttt ; 
 }
