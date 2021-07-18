@@ -81,4 +81,5 @@ Author: Bjarne Stroustrup
   Check out example [here](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_2/enum_example.cpp)
   
 * namespace
-  Check out example [here](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_2/namespace_example.cpp)
+
+  Check out example: [here](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_2/namespace_example.cpp)
