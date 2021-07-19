@@ -18,3 +18,10 @@ In this section, we cover concrete types (arithmetic type, a container, and cont
 * Container
   * RAII (resource allocation is initialization) allows us to eliminate naked new operations and we leverage destructor to eliminate the naked delete. 
   * check example: [here](https://github.com/fandan-nyc/my_side_projects/tree/master/notes/cpp_notes/chapter_3/vector_initializer.cpp)
+
+### Abstract Types
+* virtual means "MAYBE redefined later in a class derived from this one"
+* = 0 means the function is pure virtual; that is, some class derived from Container must define the func.
+* This is just interface as in Java. 
+* You generally do NOT define constructor, but always have destructor in the interface
+  * exmaple is [here](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/virtual_class_sample.cpp)
