@@ -17,3 +17,4 @@ In this section, we cover concrete types (arithmetic type, a container, and cont
 * meanwhile, if the concrete class change in a significant way, the user has to recompile. it is the cost to pay.
 * Container
   * RAII (resource allocation is initialization) allows us to eliminate naked new operations and we leverage destructor to eliminate the naked delete. 
+  * check example: [here](https://github.com/fandan-nyc/my_side_projects/tree/master/notes/cpp_notes/chapter_3/vector_initializer.cpp)
