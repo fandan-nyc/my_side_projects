@@ -13,6 +13,8 @@
   * smart pointers
   * special purpose container
 # String
+* substr, replace, toupper, and you can == to compare
+* +/+= concatenation
 
 # Stream I/O
 
