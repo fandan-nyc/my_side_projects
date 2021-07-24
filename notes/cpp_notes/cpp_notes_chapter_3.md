@@ -32,5 +32,6 @@ In this section, we cover concrete types (arithmetic type, a container, and cont
 
 ## Copy and Move
 * in this exmple, everything is copy. so when we do `a+=b;` in the operator+ method in [ComplexRun.cpp](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/ComplexRun.cpp), neither a nor b had value changed. 
-* copy constructor and copy operator
-* move constructor and move operator
+* memberwise copy: this is wrong. [vector_copy](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/vector_copy.cpp) is a good example. you copy the pointer of the array. 
+* copy constructor and copy operator. [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/vector_copy_constructor.cpp);
+* move constructor any move operator. [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/vector_move.cpp)
