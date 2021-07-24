@@ -25,3 +25,9 @@ In this section, we cover concrete types (arithmetic type, a container, and cont
 * This is just interface as in Java. 
 * You generally do NOT define constructor, but always have destructor in the interface
   * exmaple is [here](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/virtual_class_sample.cpp)
+* virtual func:
+  * With different implementation of the same virtual func in different concrete class, how does the compiler know which one to use ? 
+  * The answer is **vtbl**, virtual function table. Each class with virtual func has its own vtbl  identifiying its virtual func. 
+  * vtle is almost as efficient as the direct call (within 25%). the space overhead is one pointer in each object of a class with virtual func plus one vtbl of each such class. 
+
+## Copy and Move
