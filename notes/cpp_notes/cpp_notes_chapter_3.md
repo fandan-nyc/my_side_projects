@@ -43,6 +43,7 @@ A template is a class or a function that we parameterize with a set of types or 
 * example 1: [vector template](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/vector_template.cpp)
 * In the link above, we have two ways to run `for(auto& x: inputValue)`. one is to override std::begin(), the other is provide begin() in the class which will be called by std::begin();
 ### function template
+* [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/function_template.cpp)
 
 ### function objects
 
