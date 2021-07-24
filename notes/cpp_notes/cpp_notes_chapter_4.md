@@ -17,6 +17,10 @@
 * +/+= concatenation
 
 # Stream I/O
+* cout
+* cin
+  * you can read the whole line by `getline(cin, local_var)`
+* I/O stream for user defined types   
 
 # Containers
 
