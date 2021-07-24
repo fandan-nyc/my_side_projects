@@ -59,5 +59,17 @@ A template is a class or a function that we parameterize with a set of types or 
   * here are [examples for lambda capture](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/lambda_capture.cpp)
 
 ### varadic tempaltes 
-
+* [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/varadic_template.cpp)
+* you use `...` for expansion.
 ### aliases
+```
+template<typename Key, typename Value>
+class Map{
+//...
+}
+
+template<typename Value>
+using String_map = Map<string, Value>
+
+String_map<int> m = ....
+```
