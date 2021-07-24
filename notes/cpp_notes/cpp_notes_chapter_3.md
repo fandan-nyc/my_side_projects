@@ -35,3 +35,17 @@ In this section, we cover concrete types (arithmetic type, a container, and cont
 * memberwise copy: this is wrong. [vector_copy](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/vector_copy.cpp) is a good example. you copy the pointer of the array. 
 * copy constructor and copy operator. [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/vector_copy_constructor.cpp);
 * move constructor any move operator. [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/vector_move.cpp)
+* suppressing operations: add `=delete` at the end of the method. this is useful for copy constructor / move constructor in the interface. An attempt to copy/move an object will be caught by the compiler.
+
+## Templates
+A template is a class or a function that we parameterize with a set of types or values.
+### parameterize types
+* example 1: [vector template](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/vector_template.cpp)
+* In the link above, we have two ways to run `for(auto& x: inputValue)`. one is to override std::begin(), the other is provide begin() in the class which will be called by std::begin();
+### function template
+
+### function objects
+
+### varadic tempaltes 
+
+### aliases
