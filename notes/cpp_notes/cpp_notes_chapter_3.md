@@ -31,3 +31,4 @@ In this section, we cover concrete types (arithmetic type, a container, and cont
   * vtle is almost as efficient as the direct call (within 25%). the space overhead is one pointer in each object of a class with virtual func plus one vtbl of each such class. 
 
 ## Copy and Move
+* in this exmple, everything is copy. so when we do `a+=b;` in the operator+ method in [ComplexRun.cpp](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/ComplexRun.cpp), neither a nor b had value changed. 
