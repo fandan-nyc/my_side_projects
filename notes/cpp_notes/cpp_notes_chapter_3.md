@@ -46,6 +46,17 @@ A template is a class or a function that we parameterize with a set of types or 
 * [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/function_template.cpp)
 
 ### function objects
+* this is also called *functor*. this is used to define objects that can be called as functions.
+* This is an [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/functor_1.cpp).
+* Such functors are wildely used as arguments in the algorithms. For example, we can count the occurance of values < than given one. Here is an [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/functor_2.cpp)
+* There is a better way to handle this: lambda. Lambda generates a function object exactly the same as functor (function object).
+  * This is an [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/functor_3.cpp). Note that, we do not need to define the LessThan functor anymore. Lambda sits in perfectly. 
+  * [&] bis a **capture list** specifying that local names used will be accessed through reference
+  * if we want to capture only x, we can do `[&x]`
+  * if we want to give generated object a copy of x, then we do `[]`. 
+  * capture nothing is []. capture all local names by reference is [&], capture all local names by value, [=]
+  * in our case, `cout << count(inputValue, [](int x){ return x >= 10;});` the func is stateless, so we should capture nothing.
+  * here are [examples for lambda capture](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_3/lambda_capture.cpp)
 
 ### varadic tempaltes 
 
