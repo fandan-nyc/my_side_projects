@@ -23,3 +23,14 @@
 
 
 ## Concurrency
+* tasks
+  * [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_5/thread_example.cpp)
+  * Note that, you need to compile `g++ -pthread main.cpp; ./a.out`, otherwise you will have a linux error: `undefined reference to `pthread_create'
+/tmp/cc27j3ck.o: In function `std::thread::thread<F>(F&&)':`
+  * This example above is not correct since `cout` has been shared without synchronization -> the result will be undetermined and could vary between different executions of the program.
+  * Our goal is to keep tasks completely separate except where they communicate in simple and obvious way. 
+* passing arguments
+* returning results 
+* sharing data 
+* communicating tasks
+
