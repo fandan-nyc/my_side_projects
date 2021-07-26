@@ -30,7 +30,13 @@
   * This example above is not correct since `cout` has been shared without synchronization -> the result will be undetermined and could vary between different executions of the program.
   * Our goal is to keep tasks completely separate except where they communicate in simple and obvious way. 
 * passing arguments
-* returning results 
+  * [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_5/passing_arguments.cpp)
+* returning results
+  * cref -> const reference
+  * to return a value from thread, one way is to passing into a pointer and assign the result to the pointer. thus we can get the data out side of the thread after it is joint.  
 * sharing data 
+  * [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_5/sharing_data.cpp). 
+  * use of defer_lock, so you can lock multiple locks at the same time. 
+  * each object has its own mutex, so we know when to modify / lock which one. 
 * communicating tasks
 
