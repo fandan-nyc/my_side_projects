@@ -30,7 +30,25 @@
   * assigning a vector involves copying its elements
   * vector does not have range check when calling []. but ::at(i) does. We can have a wrapper like [this](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_4/vector_at.cpp). Note that, this a try catch example here as well. watch out for `...` for all other exceptions catch block.
 * list 
-  * this is a double linked list in cpp 
+  * this is a double linked list in cpp
+  * you can do insert, erase. there is no find, so you need to traverse the list.
+  * it performs better with a small verctor, than a small list. unless you have a strong reason, always use vector, which works better for find, count, sort and binary_search etc.
+* map: this is red-black tree, unordered_map, provides a default hash func for string. you can provide your own when needed.
 # Algorithms
+* the standard algorithm are expressed in terms of *sequence* of elements. 
+* A sequence is represented by a pair of iterators specifying the first element and the one beyond-the-last element. 
+* here are 3 ways to implement the findFunc (a wrapper of algorithm::find) with iterator. [here](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_4/use_of_iterator.cpp). Note that, we can have template for iterator in this case `findFunc3`.
+* using predict
+```
+#include <iostream>
+#include <unordered_map> 
+#include <algorithm> 
 
-# Advice
+using namespace std;
+
+int main(){
+   unordered_map<string, int> um {{"a", 11 }, {"b", 10}};
+   auto x = find_if(um.begin(), um.end(), [](const pair<string, int>& r){ return r.second > 5 ;});
+   cout << (*x).first;
+}
+```
