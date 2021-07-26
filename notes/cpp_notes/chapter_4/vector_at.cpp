@@ -21,8 +21,15 @@ class Vec : public  vector<T> {
 int main() {
 
     vector<int> vectorTest {1,2,3,4};
-    cout << vectorTest[10];
+    cout << vectorTest[10] << endl;
     
-    Vec<int> test {1,2,3,4};
-    cout << test[10];
+    try{
+        Vec<int> test {1,2,3,4};
+        throw "aaa";
+        cout << test[10];
+    }catch(out_of_range){
+        cout << "out of range" << endl;
+    }catch(...){
+        cout << "other issues" << endl;
+    }
 }
