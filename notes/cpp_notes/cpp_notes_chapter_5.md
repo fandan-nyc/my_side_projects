@@ -41,4 +41,23 @@
 * waiting for events
   * producer consumer [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_5/waiting_for_events.cpp) with condition_varible
 * communicating tasks
-
+  * note: mainly using <future>, there are three facilities: futures and promise, async, packaged_task
+  * future and promise
+```
+ promise<X> & px;
+ X res ; 
+ px.set_value(res);
+ px.sex_exception(current_exception());
+```
+```
+ future<X> fx;
+ X res = fx.get(); 
+```
+  * packaged_tasks: [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_5/packaged_tasks.cpp)
+  * async: do not using async for tasks sharing resources needing locking - with async you do not know how many threads will be used because it is up to async to decide based on what it knows about the system resources available at the time of a call.
+    ```
+      auto f0 = async(func, var1, var2, var3);
+    ```
+ 
+ 
+ 
