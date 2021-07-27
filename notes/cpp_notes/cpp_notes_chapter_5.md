@@ -38,5 +38,7 @@
   * [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_5/sharing_data.cpp). 
   * use of defer_lock, so you can lock multiple locks at the same time. 
   * each object has its own mutex, so we know when to modify / lock which one. 
+* waiting for events
+  * producer consumer [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_5/waiting_for_events.cpp) with condition_varible
 * communicating tasks
 
