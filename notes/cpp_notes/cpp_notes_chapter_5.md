@@ -59,5 +59,17 @@
       auto f0 = async(func, var1, var2, var3);
     ```
  
+## small utility components 
+* time
+  ```
+     #include <chrono>
+     using namespace std::chrono;
+     auto t0 = high_resolution_clock::now();
+     do_work();
+     auto t1 = high_resolution_clock::now();
+     auto diff = duration_cast<milliseconds>(t1 - t0).count() << "msec\n";
+  ```
+* type function [TODO]
+* tuple and pair
  
  
