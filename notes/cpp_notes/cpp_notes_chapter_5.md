@@ -88,6 +88,5 @@
 * tuple and pair
 * math: accumulate, complex number, random number, numeric limits
   * rand [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_5/rand_example.cpp)
-  * another [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_5/rand_example2.cpp)
- 
- 
+  * another [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_5/rand_example2.cpp) for rand
+  * valarray: [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_5/valarray_example.cpp)
