@@ -22,3 +22,21 @@ This chapter includes
    
    enum + class -> user defined types
   ```
+### bool
+```
+   bool a = 7; // true
+   bool b {7} ; // error: narrowing
+   int a1 = a; // 1
+   int b1 {true}; // 1
+   
+   // you can also do arithmetic operation
+   bool a = true;
+   bool b= true;
+   bool x = a+b ; // true
+   bool y = a-b ; // 1-1 = 0 and 0 is false
+   bool z = a || b ; // true 
+   
+   // pointer -> bool, nullptr -> fales, valid pointer = true;
+```
+
+### character type
