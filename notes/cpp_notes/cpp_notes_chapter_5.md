@@ -69,7 +69,21 @@
      auto t1 = high_resolution_clock::now();
      auto diff = duration_cast<milliseconds>(t1 - t0).count() << "msec\n";
   ```
-* type function [TODO]
+* type function
+  * a type function is a func that is evaluated at compile time given a type as its argument or returning a type. 
+  * this is called metaprogramming. with template, it is called template metaprogramming.
+    ```
+        #include <limits> 
+        #include <iostream>
+
+        using namespace std;
+
+        int main(){
+            cout << numeric_limits<float>::min() << endl;
+            constexpr int size = sizeof(int);
+            cout << size << endl;
+        }
+    ```
 * tuple and pair
  
  
