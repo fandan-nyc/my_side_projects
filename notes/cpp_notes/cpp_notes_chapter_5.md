@@ -84,6 +84,7 @@
             cout << size << endl;
         }
     ```
+  * another example is [here](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_5/type_func.cpp)
 * tuple and pair
  
  
