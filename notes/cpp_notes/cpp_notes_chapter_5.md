@@ -86,5 +86,8 @@
     ```
   * another example is [here](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_5/type_func.cpp)
 * tuple and pair
+* math: accumulate, complex number, random number, numeric limits
+  * rand [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_5/rand_example.cpp)
+  * another [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_5/rand_example2.cpp)
  
  
