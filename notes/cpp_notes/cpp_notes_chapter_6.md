@@ -109,3 +109,23 @@ This chapter includes
    cout << "ClassName size: " << sizeof(ClassName) << endl; // 4
  }
  ```
+### Scope
+you can use ::x to refer to global var. 
+```
+ #include <iostream>
+
+using namespace std;
+
+int x = 1;
+int main(){
+  cout << x << endl; // 1
+  {
+    int x = 2;
+    cout << x << endl; // 2
+    cout << ::x << endl; // 1
+    ::x = 10; 
+  }
+  cout << x << endl; // 10
+  cout << ::x << endl; //10
+}
+```
