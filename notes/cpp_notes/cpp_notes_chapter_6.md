@@ -211,3 +211,15 @@ int main(){
 ```
 Note that, the f is a lambda func, with no type defined and unique.
 also, the template for decltype(A{} + B{})
+
+### Left Value and Right Value
+* has identity: the program has the name of, pointer to, or reference to the object, so that it is possible to determine if two objects are the same, whether the value of the object has changed etc. 
+* is movable: the object can be moved from (we can move its value to another location, and leave the object in a valid but unspecified statem, rather than copy)
+* we use i = has identify, m = is movable
+```
+   lvalue (i & !m)              xvalue (i & m)          prvalue (!i & m)
+        |                          |  |                         |
+        ---------------------------   ---------------------------
+                       |                           |
+                    glvalue (l)                   rvalue (m)
+```
