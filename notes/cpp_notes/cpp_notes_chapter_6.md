@@ -73,3 +73,39 @@ This chapter includes
         char * cp = &sc; // cannot convert
       }
     ```
+    
+### int type
+* decimal, octal and hexadecimal.
+* hexadecimal -> with 0x prefix
+* octal -> with 0 prefix 
+* 0 is octal. there is no decimal 0. 
+
+### floating point
+* float, double, long double 
+* float is single precision, double is double precision, and long double is extended precision. 
+* the definition of single precision, double precision and extended precision is implementation-defined
+* default, a floating number is double. if you need a float, use 12.3F, if you do 12.3L it is a long double
+
+
+## alignment
+* [this](https://lecoding.com/post/2016/about-cpp-alignment/) is a good article in chinese, which explained the idea very well
+ ```
+ #include <iostream> 
+
+ using namespace std;
+
+ struct ClassName {
+   short num;
+   char x;
+ };
+
+ int main(){
+   cout << "char: " <<   alignof(char) << endl; // 1
+   cout << "int: " <<   alignof(int) << endl; // 4
+   cout << "double: " <<   alignof(double) << endl; // 8
+   cout << "string: " << alignof(string) << endl; // 8
+   cout << "char*: " << alignof(char*) << endl; // 8
+   cout << "ClassName: " << alignof(ClassName) << endl; // 2
+   cout << "ClassName size: " << sizeof(ClassName) << endl; // 4
+ }
+ ```
