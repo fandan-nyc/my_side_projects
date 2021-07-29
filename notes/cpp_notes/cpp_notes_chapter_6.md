@@ -136,3 +136,8 @@ int x = {12};
 int x 12;
 int x(12); 
 ```
+### declarator
+```
+int * x, y; // it is int* x and int y; the int is base type, the * is declarator operator
+int x[10], *y;
+```
