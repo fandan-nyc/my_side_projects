@@ -209,3 +209,5 @@ int main(){
 
 }
 ```
+Note that, the f is a lambda func, with no type defined and unique.
+also, the template for decltype(A{} + B{})
