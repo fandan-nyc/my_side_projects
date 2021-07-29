@@ -63,3 +63,13 @@ This chapter includes
         }
       }
     ``` 
+    you cannot convert the char pointer for different types. but the char value can be assigned cross (with risky of truncation).
+    but it is implementation defined. 
+    ```
+      #include <iostream> 
+
+      int main(){
+        signed char sc = 'b';
+        char * cp = &sc; // cannot convert
+      }
+    ```
