@@ -136,6 +136,43 @@ int x = {12};
 int x 12;
 int x(12); 
 ```
+combining auto with {} is confusing 
+```
+auto x {12}; // initializer_list<int>
+auto x = 12; // int
+```
+```
+vector<int> v1 {99}; // vector of 1 ele, value = 99
+vector<int> v2 (99); // vector of 99 elements, value = 0 for each
+```
+missing initializer
+* a good use case without initializer is a large input buffer
+  ```
+    constexpr int max = 1024 * 1024;
+    char buff[max]; // without int 
+    char buff[max]{}; // with initialization, every char is 0 in this case.
+  ```
+* no init example 
+  ```
+     int x ;  // no init value
+     char buf[1024]; // buf[i] does not have a well defined value
+     
+     int* p {new int}; // *p does not have a well defined value
+     char* q{new char[1024]}; // q[i] does not have a well defined value
+     
+     string s ; // init == ""
+     vector<char> v ; // init with empty vector 
+     
+     string* s {new string} ; // *s == ""
+  ```
+* init example
+  ```
+    int x {}; // x -> 0
+    char buf[1204] {} ;// init, buf[i] == 0
+    
+    int* p {new int{10}};
+    char* q{new char[1024]{}}; // this and above, {} is used to give init value
+  ```
 ### declarator
 ```
 int * x, y; // it is int* x and int y; the int is base type, the * is declarator operator
