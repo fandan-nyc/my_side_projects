@@ -86,7 +86,6 @@ This chapter includes
 * the definition of single precision, double precision and extended precision is implementation-defined
 * default, a floating number is double. if you need a float, use 12.3F, if you do 12.3L it is a long double
 
-
 ## alignment
 * [this](https://lecoding.com/post/2016/about-cpp-alignment/) is a good article in chinese, which explained the idea very well
  ```
@@ -128,4 +127,12 @@ int main(){
   cout << x << endl; // 10
   cout << ::x << endl; //10
 }
+```
+### initialization
+always use {}, to avoid truncating and narrowing. the following 4 all works, but {} is the only one which can be used globally.
+```
+int x {12};
+int x = {12};
+int x 12;
+int x(12); 
 ```
