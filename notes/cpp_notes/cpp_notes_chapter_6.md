@@ -178,3 +178,34 @@ missing initializer
 int * x, y; // it is int* x and int y; the int is base type, the * is declarator operator
 int x[10], *y;
 ```
+### the auto type specifier
+```
+auto v1 = 1234 ;   // int 
+auto v1 {1234}; // list of int
+```
+always use = with auto, whenever we do not mean list to ensure the correctness
+
+### decltype
+```
+#include <iostream>
+
+using namespace std;
+
+template<typename A, typename B>
+decltype(A{} + B{}) sum(A a, B b){
+    return (a+b);
+}
+
+int main(){
+    auto f = [](int a, int b){
+        return a+b;
+    };
+    decltype(f) g = f ;
+    cout << g(1,3) << endl;
+    cout << typeid(sum(1, 23.4)).name() << endl; // d
+    cout << typeid(sum("acc", 'b')).name() << endl;
+
+    cout << sum('a' , 'b') << endl;
+
+}
+```
