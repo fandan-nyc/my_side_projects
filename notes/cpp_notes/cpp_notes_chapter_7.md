@@ -53,4 +53,24 @@ int * fp(char*) ; // a func, whose input is char* an dthe return is int*
       int t[5] = x ; //  error: array must be initialized with a brace-enclosed initializer
     } 
   ```
-  
+* string literals
+  * you can have a long string broken into two lines as below
+    ```
+      int main(){
+        char x[] =  "aa"
+          "bb";
+       string y = "tt"
+         "zz";
+       cout << y << endl;
+      }
+    ```
+  * raw string literal:  R"( and )" is the delimiter, anything in between is considered as part of the string
+    ```
+      string x  = R"("\t\t\t")";
+      cout << x << endl; // "\t\t\t"
+          string y = R"(a
+    b
+      c
+    )";
+    ``` 
+    Note that, y in this case, contains \n and space.
