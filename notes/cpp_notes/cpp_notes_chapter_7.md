@@ -39,4 +39,18 @@ int * fp(char*) ; // a func, whose input is char* an dthe return is int*
        int* t = malloc(5); // heap -> C style
      }
   ```
-  [article](https://www.moderncplusplus.com/free-store-vs-heap/)
+  read this [article](https://www.moderncplusplus.com/free-store-vs-heap/)
+* array initializer: array cannot be copied and there is array assignment
+  ```
+    #include <iostream>
+
+    using namespace std;
+
+    int main(){
+      int x[5] = {1,2,3,4};
+      int y[5] = {1,10};
+      y = x; // error: invalid array assignment
+      int t[5] = x ; //  error: array must be initialized with a brace-enclosed initializer
+    } 
+  ```
+  
