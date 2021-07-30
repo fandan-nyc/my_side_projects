@@ -26,7 +26,17 @@ int * fp(char*) ; // a func, whose input is char* an dthe return is int*
 * arrays
   * unless you just need is a simple fixed-length sequence of objects of a given type in mem, you should choose vector over array
   * mem alloction for different usage: static storage, heap, free store
-    * static storage
-    * stack: 
-    * heap: legacy from C. variables created through malloc and delete through free.
-    * free storre: all local variables in C++ goes here
+    * static storage // life time is the entire execution of the program
+    * stack: local variable
+    * heap: legacy from C. malloc and free
+    * free store: new and delete
+  ```
+     int a1[10]; // static storage
+     
+     void f(){
+       int a2[20];  // on the stack 
+       int* p = new int[40]; // free store
+       int* t = malloc(5); // heap -> C style
+     }
+  ```
+  [article](https://www.moderncplusplus.com/free-store-vs-heap/)
