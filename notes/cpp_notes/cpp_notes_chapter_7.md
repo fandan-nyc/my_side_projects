@@ -108,3 +108,23 @@ int * fp(char*) ; // a func, whose input is char* an dthe return is int*
           printArray2(m, 3, 4); // error: cannot convert ‘int (*)[4]’ to ‘int*’ for argument ‘1’ to ‘void printArray2(int*, int, int)’
       }
     ```
+### Pointers and const
+* const pointer vs the pointer to const
+  ```
+    #include <iostream> 
+
+    using namespace std;
+    int main(){
+        char s[] = "abcd";
+        char ss[] = "efgh";
+        const char * t1 = s; 
+        // t[2] = 5; you cannot assign to a value -> const value 
+    
+        char* const t2 = s ; // const pointer, pointer to values 
+        t2[1] = 'z';
+        cout << s << endl; // change value 
+        // t2 = s; //this will fail.
+    
+        const char* const t3 = s; // change of pointer or change of value will fail   
+    }
+  ```
