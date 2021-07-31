@@ -110,6 +110,7 @@ int * fp(char*) ; // a func, whose input is char* an dthe return is int*
     ```
 ### Pointers and const
 * const pointer vs the pointer to const
+* Note that: const modifies the data type. so const int and int are two different data types. 
   ```
     #include <iostream> 
 
@@ -128,3 +129,17 @@ int * fp(char*) ; // a func, whose input is char* an dthe return is int*
         const char* const t3 = s; // change of pointer or change of value will fail   
     }
   ```
+  ```
+    #include <iostream> 
+
+    using namespace std;
+    int main(){
+    int i = 0;
+    const int j = 1; 
+    cout << "j is const ? "  << std::is_const<decltype(j)>::value << endl; // 1
+    cout << "i is const ? "  << std::is_const<decltype(i)>::value << endl; // 0
+    cout << typeid(i).name() << endl; // show as i
+    cout << typeid(j).name() << endl; // show as i
+   }
+  ```
+* 
