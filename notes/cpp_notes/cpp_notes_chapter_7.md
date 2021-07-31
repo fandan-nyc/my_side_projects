@@ -74,3 +74,37 @@ int * fp(char*) ; // a func, whose input is char* an dthe return is int*
     )";
     ``` 
     Note that, y in this case, contains \n and space.
+  * passing array
+    ```
+      void printArray(int[][] data, int x, int y);
+      // test.cpp:6:25: error: declaration of ‘m’ as multidimensional array must have bounds for all dimensions except the first
+    ```
+    ```
+      #include <iostream>
+
+      using namespace std;
+
+      void printArray(int m[][4], int x, int y){
+          for(int i = 0; i< x; i++){
+              for(int j = 0; j < y; j++ ){
+                  cout << m[i][j] << '\t';
+              }
+          }
+          cout << "----" << endl;
+      }
+
+      void printArray2(int* m, int x, int y){
+          for(int i = 0; i < x; i++){
+             for (int j  = 0; j < y; j++){
+                  cout << m[i*y + j] << '\t';
+              }
+          }
+          cout << "-----" << endl;
+      }
+      int main(){
+          int m[3][4] = {{1,2,3,4}, {5,6,7,8}, {9,10,11,12}};
+          printArray(m, 3, 4);
+          printArray2(&m[0][0], 3, 4); // the first element of the array (even it is multi-dimensional)
+          printArray2(m, 3, 4); // error: cannot convert ‘int (*)[4]’ to ‘int*’ for argument ‘1’ to ‘void printArray2(int*, int, int)’
+      }
+    ```
