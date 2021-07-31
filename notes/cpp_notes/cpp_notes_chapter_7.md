@@ -155,3 +155,69 @@ int * fp(char*) ; // a func, whose input is char* an dthe return is int*
        delete j; // free(): invalid pointer, bash: line 12: 22038 Aborted $file.o
     }
   ```
+### References 
+* there are lvalue references, const reference and rvalue reference.
+  * lvalue reference: to refer to objects whose value we want to change
+  * const reference: to refer to objects whose value we donot want to change 
+    * Note tha,t const reference is considered as lvalue reference as well.  
+  * rvalue reference: to refer to objects whose value we do not preserve afer we have used it (temporary)
+
+#### Lvalue reference
+* reference to the lvalue. you need to initialize the reference. you can have nullptr, but there is no null reference.
+  ```
+    using namespace std;
+    int main(){
+      int var = 1;
+      int& t {var};
+      t = 2;
+      cout << var << endl; // var is 2
+     // int& tttt; // error: ‘tttt’ declared as reference but not initialized
+      extern int& tt; // ok, you can init somewhere 
+    }
+  ```
+* const reference
+  ```
+    #include <iostream> 
+
+    using namespace std;
+    int main(){
+        // ******* cannot bind non-const lvalue reference of type int& to an rvalue of tyoe int 
+        // int& x1 {1};  // error 
+        const int& x2 {1};
+        cout << x2 << endl;
+        // x = 12; // assignment of read-only reference 'x'
+    }
+
+  ```
+#### Rvalue reference 
+* reference reading is [here](http://thbecker.net/articles/rvalue_references/section_01.html)
+* it aims to solve two problems: 
+  *  perfect forwarding
+  *  moving semantics
+* `std::move(x)` just a cast to be T&&
+  ```
+   #include <iostream>
+   using namespace std;
+
+   void test(int& x){
+      // can only handle lvalue
+      cout << x << endl;
+   }
+
+   void test(int&& t){
+      // rvalue
+      cout << "rvalu" << t << endl;
+   }
+
+   int main() {
+    int x =  1;
+    test(x); // lvalue
+    int& y = x; 
+    test(y); // lvalue
+    test(1); // rvalue
+  }
+```
+
+#### Reference to Reference 
+
+#### pointers and references 
