@@ -142,4 +142,16 @@ int * fp(char*) ; // a func, whose input is char* an dthe return is int*
     cout << typeid(j).name() << endl; // show as i
    }
   ```
-* 
+* and you cannote `delete` the object not created by `new`. 
+  ```
+    #include <iostream> 
+
+    using namespace std;
+    int main(){
+       int i = 0;
+       int *j = &i;
+       int* k {new int{12}};
+       delete k; // ok, you can delete something created by new
+       delete j; // free(): invalid pointer, bash: line 12: 22038 Aborted $file.o
+    }
+  ```
