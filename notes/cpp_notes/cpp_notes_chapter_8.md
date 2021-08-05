@@ -90,3 +90,11 @@ int main() {
     std::array<int> z {1,2,3}; // does not work
 }
 ```
+* POD (plain old data)
+  * pod is an object that can be manipulated as just data without worrying about complications of class layouts or user-defined semantics. 
+    ```
+      struct S2 {int a; S2(int aa} : a(aa){}}; // not a pod, you do not have default constructor 
+      struct S3 {int a; S3(int aa} : a(aa){}; S3(){}}; // not a pod, user defined default
+      struct S4 {int a; S4(int aa} : a(aa){}; S4()=default}; // POD 
+    ```
+  * [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_8/pod_example.cpp) is here
