@@ -1,4 +1,4 @@
-# structures, unions and enumerations 
+# Structures, Unions and Enumerations 
 
 
 ## intro
@@ -54,4 +54,20 @@ int main() {
         struct X x {1};
         X(10);
    } 
+  ```
+* structure and class: structure is simple a class where all members are public. thus you can have constructor as the class does. 
+  ```
+    struct X {
+      int a, b;
+    
+      int sum(){
+          return a + b ;
+      }
+    };
+
+
+    int main() {
+      X x {1,2};
+      cout << x.sum() << endl;
+    }
   ```
