@@ -191,6 +191,19 @@ int * fp(char*) ; // a func, whose input is char* an dthe return is int*
   ```
 #### Rvalue reference 
 * reference reading is [here](http://thbecker.net/articles/rvalue_references/section_01.html)
+* rvalue reference can bind to a rvalue, not a lvalue
+  ```
+    int main() {
+      string yy = "abc";
+      // string&& x {yy}; // error
+      string&& x {"123"};
+      cout << &x << endl;
+      x = "456";
+      cout << x << endl;
+      cout << &x << endl;
+  }
+  ```
+* we do not use const rvalue reference, since most of the benefits from using rvalue reference involve writing to the object to which it refers.
 * it aims to solve two problems: 
   *  perfect forwarding
   *  moving semantics
@@ -206,7 +219,7 @@ int * fp(char*) ; // a func, whose input is char* an dthe return is int*
 
    void test(int&& t){
       // rvalue
-      cout << "rvalu" << t << endl;
+      cout << "rvalue" << t << endl;
    }
 
    int main() {
