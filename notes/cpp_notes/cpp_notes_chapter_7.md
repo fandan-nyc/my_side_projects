@@ -232,5 +232,19 @@ int * fp(char*) ; // a func, whose input is char* an dthe return is int*
 ```
 
 #### Reference to Reference 
+* reference ot reference can only happen as the result of an alias / a template type argument
+```
+  using rr_i = int&&;
+  using lr_i = int&;
+  using rr_rr_i = rr_i&&; // is int&&
+  using lr_rr_i = rr_i& ; // int&& & -> int&
+  using rr_lr_i = lr_i&&; // int& && -> int&
+  using lr_lr_i = lr_i&; // int& & -> int&
+```
+  this is called reference collapse. lvalue always win =D 
 
 #### pointers and references 
+* if you need to change which object you are referring to, use pointer and you can move pointer by += -= etc
+* if you want ot be sure that a name always refers to the same object. use a reference. 
+* it is IMPOSSIBLE to redefine an operator for a pair of built-in types. such as pointer. so if you need to use a user-defined (overloaded) operator, on something, you need to use a reference. 
+
