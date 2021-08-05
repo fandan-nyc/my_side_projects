@@ -98,3 +98,11 @@ int main() {
       struct S4 {int a; S4(int aa} : a(aa){}; S4()=default}; // POD 
     ```
   * [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_8/pod_example.cpp) is here
+
+## Unions
+* Union is a struct. 
+* Union is a struct in which all members are allocated into the same address, so that the union occupies only as much as space as its largest member. 
+* natually, a union can only hold a value for only one member at a time. 
+* In this [example](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_8/union_old.cpp), we can simplify by union.
+* Here is the [union exmaple](https://github.com/fandan-nyc/my_side_projects/blob/master/notes/cpp_notes/chapter_8/union_new.cpp)
+## Enum
