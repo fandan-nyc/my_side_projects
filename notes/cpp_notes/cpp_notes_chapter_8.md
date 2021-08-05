@@ -71,3 +71,22 @@ int main() {
       cout << x.sum() << endl;
     }
   ```
+* struct and std::array
+```
+struct Point {
+    int x, y;
+};
+
+int main() {
+    using Array = std::array<Point, 3>;
+    Array x {{{1,2},{3,4}, {5,6}}};
+    cout << x[1].x; // 3
+}
+```
+Note that, for std::array, you need to give type and length. you cannot deduct from the input
+```
+int main() {
+    int t[] =  {1,2,3};
+    std::array<int> z {1,2,3}; // does not work
+}
+```
