@@ -9,6 +9,9 @@ class BlockChain(object):
         self.transactions = []
         self.new_block(last_hash=1, proof=100)
 
+    def new_transaction_from_request(self, payload):
+        return self.new_transaction(payload["sender"], payload["receiver"], payload["amount"])
+
     def new_transaction(self, sender, receiver, amount):
         # return the index of the block it will fit into
         self.transactions.append(

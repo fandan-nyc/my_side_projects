@@ -5,16 +5,18 @@ from uuid import uuid4
 
 app = Flask(__name__)
 block_chain = BlockChain()
-node_identifier = str(uuid4()).replace("-","")
+node_identifier = str(uuid4()).replace("-", "")
 
 
 def msg_response(msg, http_code):
     return jsonify({"msg": msg}), http_code
 
-@app.route("/chain", methods = ["GET"])
+
+@app.route("/chain", methods=["GET"])
 def chain():
     response = {"chain": block_chain.chain, "chain_length": len(block_chain.chain)}
     return response, 200
+
 
 @app.route("/transaction/new", methods=["POST"])
 def new_transaction():
@@ -25,9 +27,23 @@ def new_transaction():
         return True, None
     payload = request.get_json()
     result, msg = validate_required_keys(payload.keys())
-    if result == False:
+    if not result:
         return msg_response(msg, 400)
+    chain_index = block_chain.new_transaction_from_request(payload)
+    return msg_response(f'new transaction added at chain: {chain_index}', 200)
 
+
+@app.route("/mine", methods=["GET"])
+def mine():
+    if not block_chain.transactions:
+        return msg_response("no transactions, no mining", 400)
+    # calculate the pow (proof of work)
+    last_proof = block_chain.chain[-1]["proof"]
+    curr_proof = block_chain.proof_of_work(last_proof)
+    # record a new coin
+    block_chain.new_transaction(0, node_identifier, 1)
+    block_chain.new_block(curr_proof)
+    return msg_response("new block created", 200)
 
 
 if __name__ == "__main__":
