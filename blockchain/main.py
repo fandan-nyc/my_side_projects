@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 from block_chain import BlockChain
 from constants import REQUIRED_TRANSACTION_KEYS
 from uuid import uuid4
+import sys
 
 app = Flask(__name__)
 block_chain = BlockChain()
@@ -10,6 +11,26 @@ node_identifier = str(uuid4()).replace("-", "")
 
 def msg_response(msg, http_code):
     return jsonify({"msg": msg}), http_code
+
+
+@app.route('/peer/add', methods=["POST"])
+def add_peer():
+    payload = request.get_json()
+    peers = payload['peers']
+    for i in peers:
+        block_chain.nodes.add(i)
+    return msg_response(f"current peers: {block_chain.nodes}", 200)
+
+
+@app.route('/peer/resolve', methods=["GET"])
+def resolve_peer():
+    current_chain = block_chain.chain
+    resolve_result = block_chain.consensus_algo()
+    if not resolve_result:
+        return msg_response("no update", 200)
+    else:
+        response = {'before': current_chain, "after": block_chain.chain}
+        return jsonify(response), 200
 
 
 @app.route("/chain", methods=["GET"])
@@ -47,4 +68,4 @@ def mine():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=sys.argv[1])
