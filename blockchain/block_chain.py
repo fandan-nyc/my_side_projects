@@ -7,7 +7,7 @@ class BlockChain(object):
     def __init__(self):
         self.chain = []
         self.transactions = []
-        self.new_block(previous_hash=1, proof=100)
+        self.new_block(last_hash=1, proof=100)
 
     def new_transaction(self, sender, receiver, amount):
         # return the index of the block it will fit into
