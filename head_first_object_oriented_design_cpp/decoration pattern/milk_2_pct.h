@@ -13,5 +13,4 @@ private:
     const std::string description = "2% milk" ; 
     const float cost = 0.2;
     std::unique_ptr<Beverage> beverage_;
-    
 };
